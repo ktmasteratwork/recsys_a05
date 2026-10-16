@@ -997,7 +997,9 @@ function runPipeline() {
     return;
   }
   const opts = readHyperparameters();
-  try {    if (status) status.textContent = "Training\u2026";
+  try {
+
+    if (status) status.textContent = "Training\u2026";
     initializeFactors(trainSet, NUM_FACTORS);
     trainingHistory = trainMF(trainSet, valSet, opts);
     bestCheckpoint = selectBestCheckpoint(trainingHistory);
